@@ -19,7 +19,7 @@
   "scripts": {
     "test": "gulp test",
     "publish-please": "publish-please",
-    "prepublish": "publish-please guard"
+    "prepare": "publish-please guard"
   },
   "keywords": [
     "testcafe",
@@ -30,6 +30,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-runtime": "^6.11.6",
+    "debug": "^2.6.8",
     "phantom": "^2.1.14"
   },
   "devDependencies": {

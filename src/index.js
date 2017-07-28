@@ -1,5 +1,10 @@
 import { create as createPhantom } from 'phantom';
 
+import Debug from 'debug';
+
+//Add debug namespace
+var debug = Debug('testcafe-browser-provider-phantomjs');
+
 export default {
     phantom: null,
 
@@ -24,7 +29,9 @@ export default {
     },
 
     async init () {
-        this.phantom = await createPhantom();
+        var phantomArgs = debug.enabled ? ['--remote-debugger-port=9000', '--remote-debugger-port=9000'] : [];
+
+        this.phantom = await createPhantom(phantomArgs);
     },
 
     async dispose () {
